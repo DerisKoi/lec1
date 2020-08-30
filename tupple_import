@@ -61,7 +61,7 @@ for file in files:
         # 构建一个表名称，供后期SQL语句调用
         # 使用pandas库读取csv文件的所有内容,结果f是一个数据框，保留了表格的数据存储方式，是pandas的数据存储结构。
         f2 = pd.read_csv(file, encoding='utf-8')  # 注意：如果报错就改成 encoding='utf-8' 试试
-        f = f2.astype(object).where(pd.notnull(f2), 'NULL')
+        f = f2.astype(object).where(pd.notnull(f2), None)
         print(f)
         # print(f.dtypes)
 
